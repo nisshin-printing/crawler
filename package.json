@@ -1,5 +1,16 @@
 {
-	"name": "easy-app",
-	"version": "0.0.1",
-	"main": "main.js"
+  "name": "crawler",
+  "version": "0.0.1",
+  "description": "youtube to mp3",
+  "author": "Kazuki Fukuda",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=img/ytb.ico --prune=true --out=release-builds --version-string.CompanyName=MEDZED --version-string.FileDescription=Youtube-To-Mp3-Downloader --version-string.ProductName=Crawler",
+    "package-linux": "electron-packager . --overwrite --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds",
+    "create-installer-win": "node installers/windows/createinstaller.js"
+  },
+  "repository": "https://github.com/nisshin-printing/crawler.git",
+  "license": "MIT"
 }
